@@ -17,14 +17,26 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
 }
 
-html::-webkit-scrollbar {
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
   display: none;
 }
 
 body {
   margin: 0;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
   font-family: 'Playfair Display', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   background: linear-gradient(180deg, var(--bg-dark), var(--bg-soft) 40%);
   color: var(--white);
@@ -73,12 +85,18 @@ a {
 .welcome-card {
   margin: 0 auto 18px;
   padding: 18px 16px;
-  width: min(88vw, 460px);
+  width: min(84vw, 420px);
+  max-width: 100%;
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.04);
   box-shadow: 0 10px 30px rgba(2,12,30,0.6);
   backdrop-filter: blur(4px);
+}
+
+/* ensure no horizontal drift from viewport rounding */
+html, body {
+  overflow-x: hidden;
 }
 
 /* subtle whole-app animations */
@@ -97,6 +115,10 @@ a {
   overflow-y: auto;
   scroll-snap-type: y mandatory;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  overscroll-behavior-x: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   animation: stackRise 520ms ease both;
 }
 
@@ -139,8 +161,14 @@ a {
   position: relative;
   z-index: 2;
   width: min(92vw, 520px);
+  max-width: 520px;
+  margin: 0 auto;
   text-align: center;
-  padding: 28px 18px;
+  padding: 28px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .eyebrow {
@@ -229,6 +257,7 @@ h1 {
 .envelope {
   margin: 22px auto 0;
   width: min(84vw, 360px);
+  max-width: 100%;
   perspective: 900px;
 }
 
@@ -342,6 +371,8 @@ h1 {
   overflow-y: auto;
   scroll-snap-type: y mandatory;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  overscroll-behavior-x: none;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -551,7 +582,7 @@ h1 {
 .sign-off p {
   margin: 0 0 4px;
   font-size: 0.95rem;
-  color: rgba(155,208,255,0.88);
+  color: rgba(155, 208, 255, 0.88);
 }
 
 .sign-off h4 {
