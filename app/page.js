@@ -64,12 +64,21 @@ export default function Home() {
     });
   }, []);
 
+  React.useEffect(() => {
+    if (isOpen) {
+      window.scrollTo(0, 0);
+      const stack = document.querySelector('.invite-stack');
+      if (stack) stack.scrollTop = 0;
+    }
+  }, [isOpen]);
+
   function handleOpen() {
     // play envelope open animation, then show invitation
     setOpening(true);
     setTimeout(() => {
       setIsOpen(true);
       setOpening(false);
+      window.scrollTo(0, 0);
     }, 700);
   }
 
@@ -137,7 +146,7 @@ export default function Home() {
               <div className="calendar-copy">
                 <p className="calendar-kicker">Save the date</p>
                 <h2 id="calendar-title">Add to calendar</h2>
-                <p>Set a reminder for our Muhurtham .</p>
+                <p>Set a reminder for our Muhurtham.</p>
               </div>
               <a className="calendar-btn" href="/muhurtham-reminder.ics" download>
                 Add event

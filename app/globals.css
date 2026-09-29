@@ -126,7 +126,7 @@ html, body {
   scrollbar-width: none;
   -ms-overflow-style: none;
   animation: stackRise 520ms ease both;
-  scroll-padding-top: max(48px, calc(env(safe-area-inset-top, 0px) + 24px));
+  scroll-padding-top: max(72px, calc(env(safe-area-inset-top, 0px) + 36px));
 }
 
 @keyframes stackRise {
@@ -404,15 +404,15 @@ h1 {
   min-height: 100dvh;
   scroll-snap-align: start;
   scroll-margin-top: 0;
-  padding-top: max(48px, calc(env(safe-area-inset-top, 0px) + 24px));
-  padding-bottom: max(32px, calc(env(safe-area-inset-bottom, 0px) + 24px));
+  padding-top: max(72px, calc(env(safe-area-inset-top, 0px) + 36px));
+  padding-bottom: max(24px, calc(env(safe-area-inset-bottom, 0px) + 20px));
   padding-left: 16px;
   padding-right: 16px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   box-sizing: border-box;
 }
 
@@ -738,56 +738,101 @@ h1 {
 }
 
 @media (max-width: 480px) {
+  .story-section {
+    padding-top: max(72px, calc(env(safe-area-inset-top, 0px) + 36px));
+    padding-bottom: max(20px, calc(env(safe-area-inset-bottom, 0px) + 16px));
+    gap: 10px;
+  }
+
+  .section-header h2 {
+    font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+    margin-top: 6px;
+  }
+
+  .tag {
+    font-size: 0.82rem;
+    padding: 5px 14px;
+  }
+
   .info-card {
-    padding: 18px 16px 16px;
+    padding: 14px 16px 14px;
+    border-radius: 18px;
   }
 
   .info-card h3 {
-    font-size: 1.35rem;
+    font-size: 1.18rem;
     line-height: 1.25;
   }
 
-  .address {
-    font-size: 0.8rem !important;
-    margin-top: 8px !important;
-    line-height: 1.45;
-  }
-
-  .description {
-    font-size: 0.86rem;
-    margin-top: 10px !important;
-    line-height: 1.45;
-  }
-
-  .map-card {
-    padding: 12px 16px;
-  }
-
-  .map-details span {
+  .date,
+  .time {
+    margin-bottom: 4px;
     font-size: 0.68rem;
   }
 
+  .address {
+    font-size: 0.76rem !important;
+    margin-top: 6px !important;
+    line-height: 1.35;
+  }
+
+  .description {
+    font-size: 0.8rem;
+    margin-top: 8px !important;
+    line-height: 1.4;
+  }
+
+  .map-card {
+    padding: 10px 14px;
+    border-radius: 16px;
+  }
+
+  .map-details span {
+    font-size: 0.64rem;
+  }
+
   .map-details strong {
-    font-size: 0.88rem;
+    font-size: 0.82rem;
+    line-height: 1.2;
   }
 
   .map-card a {
-    min-width: 100px;
-    padding: 10px 14px;
-    font-size: 0.85rem;
+    min-width: 90px;
+    padding: 8px 12px;
+    font-size: 0.78rem;
   }
 
   .calendar-card {
-    padding: 16px 16px;
+    padding: 12px 14px;
+    border-radius: 16px;
+    gap: 12px;
+  }
+
+  .calendar-kicker {
+    font-size: 9px;
+    margin-bottom: 2px;
   }
 
   .calendar-copy h2 {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  .calendar-copy p:last-child {
+    font-size: 0.75rem;
+    margin-top: 3px;
+  }
+
+  .calendar-btn {
+    min-width: 92px;
+    padding: 8px 12px;
+    font-size: 0.8rem;
   }
 
   .swipe-hint {
-    font-size: 0.78rem;
-    margin-top: 4px;
+    font-size: 0.72rem;
+    margin-top: 2px;
+    letter-spacing: 0.1em;
   }
 }
 
@@ -796,15 +841,14 @@ h1 {
   .countdown-item { padding-inline: 4px; }
   .countdown-value { font-size: 1.38rem; }
   .calendar-card {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 16px;
-    padding: 21px 19px;
-    text-align: center;
+    padding: 10px 12px;
+    gap: 10px;
   }
 
   .calendar-btn {
-    width: 100%;
+    min-width: 84px;
+    padding: 7px 10px;
+    font-size: 0.75rem;
   }
 }
 
