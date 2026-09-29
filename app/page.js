@@ -17,7 +17,7 @@ const weddingDetails = {
 const receptionDetails = {
   title: 'Reception',
   date: 'Tuesday, 15 December 2026',
-  time: '7:00 PM to 9:00 PM',
+  time: '6:00 PM to 9:00 PM',
   venue: 'K. C. Thirumana Mandapam',
   address: 'Marudhamalai Rd, Karai Gounder Layout, Mappillai Layout, Kongu Nagar, Kalveerampalayam, Coimbatore, Tamil Nadu 641046',
   mapUrl: 'https://www.google.com/maps?rlz=1C1RXQR_enIN1124IN1124&biw=1536&bih=826&sca_esv=0cc2b9f834b9d715&sxsrf=APpeQnubEWF73t1W7n71mKbl4lJS-cp-yQ:1789984299885&gs_lp=Egxnd3Mtd2l6LXNlcnAiGGsuIGMuIHRoaXJ1bWFuYSBtYW5kYXBhbTILEC4YgAQYxwEYrwEyBRAAGIAEMgsQABiABBiKBRiGAzILEAAYgAQYigUYhgMyCxAAGIAEGIoFGIYDMgsQABiABBiKBRiGA0jPFFAAWABwAHgBkAEAmAFzoAFzqgEDMC4xuAEByAEA-AEC-AEBmAIBoAJ3mAMAkgcDMC4xoAecB7IHAzAuMbgHd8IHAzItMcgHA4AIAQ&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=Kbfi7GkTX6g7MTopBCLFAxME&daddr=Marudhamalai+Rd,+Karai+Gounder+Layout,+Mappillai+Layout,+Kongu+Nagar,+Kalveerampalayam,+Coimbatore,+Tamil+Nadu+641046',
@@ -132,6 +132,19 @@ export default function Home() {
               </a>
             </div>
 
+            <section className="calendar-section" aria-labelledby="calendar-title">
+            <div className="calendar-card">
+              <div className="calendar-copy">
+                <p className="calendar-kicker">Save the date</p>
+                <h2 id="calendar-title">Add to calendar</h2>
+                <p>Set a reminder for our Muhurtham .</p>
+              </div>
+              <a className="calendar-btn" href="/muhurtham-reminder.ics" download>
+                Add event
+              </a>
+            </div>
+          </section>
+
             <div className="swipe-hint">Swipe up for the reception</div>
           </section>
 
@@ -160,6 +173,19 @@ export default function Home() {
               </a>
             </div>
 
+            <section className="calendar-section" aria-labelledby="calendar-title">
+            <div className="calendar-card">
+              <div className="calendar-copy">
+                <p className="calendar-kicker">Save the date</p>
+                <h2 id="calendar-title">Add to calendar</h2>
+                <p>Set a reminder for our reception celebration.</p>
+              </div>
+              <a className="calendar-btn" href="/reception-reminder.ics" download>
+                Add event
+              </a>
+            </div>
+          </section>
+
             <div className="countdown-section">
               <h3 className="countdown-title">Days Until the Muhurtham</h3>
               <div className="countdown-grid">
@@ -181,6 +207,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            
 
             
 

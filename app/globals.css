@@ -9,6 +9,9 @@
   --white: #fffdfd;
   --card: rgba(14, 34, 52, 0.6);
   --border: rgba(255, 255, 255, 0.12);
+  --wine: #2c1820;
+  --rose: #e9a7a1;
+  --ink: #160e14;
 }
 
 * { box-sizing: border-box; }
@@ -38,7 +41,7 @@ body {
   overscroll-behavior-y: none;
   overscroll-behavior-x: none;
   font-family: 'Playfair Display', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  background: linear-gradient(180deg, var(--bg-dark), var(--bg-soft) 40%);
+  background: var(--ink);
   color: var(--white);
 }
 
@@ -50,6 +53,7 @@ a {
 .page-shell {
   min-height: 100vh;
   background: #120b17;
+  isolation: isolate;
 }
 
 .welcome-screen {
@@ -69,8 +73,9 @@ a {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at top, rgba(255, 190, 168, 0.1), transparent 30%),
-    linear-gradient(180deg, rgba(24, 15, 21, 0.65), rgba(15, 12, 18, 0.78));
+    radial-gradient(circle at 50% 12%, rgba(255, 203, 177, 0.26), transparent 34%),
+    radial-gradient(circle at 8% 86%, rgba(178, 92, 101, 0.18), transparent 30%),
+    linear-gradient(180deg, rgba(20, 12, 18, 0.46), rgba(15, 10, 15, 0.88));
   z-index: 0;
 }
 
@@ -83,15 +88,15 @@ a {
 
 /* small card for welcome text */
 .welcome-card {
-  margin: 0 auto 18px;
-  padding: 18px 16px;
+  margin: 0 auto 26px;
+  padding: 25px 24px 22px;
   width: min(84vw, 420px);
   max-width: 100%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.04);
-  box-shadow: 0 10px 30px rgba(2,12,30,0.6);
-  backdrop-filter: blur(4px);
+  background: linear-gradient(145deg, rgba(255,255,255,0.11), rgba(255,255,255,0.025));
+  border-radius: 22px;
+  border: 1px solid rgba(255, 232, 211, 0.18);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.38), inset 0 1px 0 rgba(255,255,255,0.16);
+  backdrop-filter: blur(10px);
 }
 
 /* ensure no horizontal drift from viewport rounding */
@@ -164,7 +169,7 @@ html, body {
   max-width: 520px;
   margin: 0 auto;
   text-align: center;
-  padding: 28px 0 0;
+  padding: 34px 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -192,8 +197,8 @@ html, body {
 
 .line {
   display: block;
-  width: 72px;
-  height: 3px;
+  width: 62px;
+  height: 1px;
   border-radius: 2px;
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
   background-size: 220% 100%;
@@ -212,7 +217,7 @@ html, body {
   display: inline-flex;
   align-items: center;
   height: 36px;
-  line-height: 1;
+  line-height: 1.08;
   animation: popEmoji 3.2s ease-in-out infinite;
 }
 
@@ -255,7 +260,7 @@ h1 {
 
 /* Envelope UI */
 .envelope {
-  margin: 22px auto 0;
+  margin: 12px auto 0;
   width: min(84vw, 360px);
   max-width: 100%;
   perspective: 900px;
@@ -264,10 +269,27 @@ h1 {
 .envelope-body {
   position: relative;
   height: 220px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, rgba(60, 28, 28, 0.45), rgba(45, 20, 20, 0.35));
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(249, 217, 139, 0.05);
+  border-radius: 10px;
+  background: linear-gradient(145deg, #6c3d40, #3c2027 68%);
+  border: 1px solid rgba(255, 223, 192, 0.16);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255,255,255,0.18);
   overflow: visible;
+}
+
+.envelope-body::before,
+.envelope-body::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.envelope-body::before {
+  background: linear-gradient(35deg, transparent 49.6%, rgba(24, 10, 14, 0.28) 50%, transparent 50.5%), linear-gradient(-35deg, transparent 49.6%, rgba(24, 10, 14, 0.28) 50%, transparent 50.5%);
+}
+
+.envelope-body::after {
+  background: linear-gradient(145deg, transparent 49.5%, rgba(255, 228, 205, 0.11) 50%, transparent 50.5%);
 }
 
 .envelope-inner {
@@ -283,13 +305,13 @@ h1 {
   right: 0;
   top: -6px;
   height: 120px;
-  background: linear-gradient(180deg, #3d2323, #4d2f2f);
+  background: linear-gradient(180deg, #7c494a, #4b292f);
   border-radius: 4px 4px 50% 50% / 60% 60% 0 0;
   transform-origin: top center;
   transform: rotateX(0deg);
   transition: transform 0.6s cubic-bezier(.2,.9,.2,1);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(249, 217, 139, 0.12);
-  border: none;
+  border: 1px solid rgba(255, 232, 211, 0.12);
 }
 
 .envelope.opening .envelope-flap {
@@ -297,17 +319,25 @@ h1 {
 }
 
 .open-sticker {
-  background: linear-gradient(180deg, #3d2323, #4d2f2f);
-  color: #ffffff;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 999px;
+  background: radial-gradient(circle at 32% 28%, #f5d6a5, #b7794d 72%);
+  color: #48221d;
+  border: 2px solid rgba(255, 238, 197, 0.65);
+  padding: 19px 15px;
+  min-width: 68px;
+  min-height: 68px;
+  border-radius: 50%;
   font-weight: 800;
   font-size: 1.05rem;
-  letter-spacing: 0.02em;
-  box-shadow: 0 10px 26px rgba(3, 44, 94, 0.32);
+  letter-spacing: 0.04em;
+  box-shadow: 0 8px 0 #794331, 0 15px 26px rgba(0, 0, 0, 0.34), inset 0 1px 1px rgba(255,255,255,0.75);
   z-index: 3;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
+
+.open-sticker:hover { transform: translateY(-2px) rotate(-3deg); }
+.open-sticker:active { transform: translateY(4px); box-shadow: 0 3px 0 #794331, 0 8px 16px rgba(0,0,0,0.34); }
+.open-sticker:focus-visible, .map-card a:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 
 .envelope-shadow {
   height: 8px;
@@ -385,7 +415,7 @@ h1 {
   position: relative;
   min-height: 100vh;
   scroll-snap-align: start;
-  padding: 28px 18px 44px;
+  padding: 36px 18px 44px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -394,14 +424,14 @@ h1 {
 
 .wedding-card {
   background:
-    radial-gradient(circle at top, rgba(255, 190, 168, 0.2), transparent 28%),
-    linear-gradient(180deg, rgba(24, 15, 21, 0.9), rgba(15, 12, 18, 0.92));
+    radial-gradient(circle at 50% 0%, rgba(221, 141, 135, 0.26), transparent 34%),
+    linear-gradient(150deg, #28151e, #120c13 72%);
 }
 
 .reception-card {
   background:
-    radial-gradient(circle at top, rgba(249, 217, 139, 0.18), transparent 30%),
-    linear-gradient(180deg, rgba(17, 12, 18, 0.9), rgba(31, 21, 25, 0.94));
+    radial-gradient(circle at 50% 0%, rgba(225, 185, 108, 0.2), transparent 34%),
+    linear-gradient(150deg, #251820, #120d13 72%);
 }
 
 .section-header {
@@ -413,7 +443,7 @@ h1 {
   padding: 7px 12px;
   border: 1px solid var(--border);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 239, 218, 0.07);
   color: var(--gold);
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -430,15 +460,15 @@ h1 {
 .map-card {
   width: min(92vw, 460px);
   margin: 0 auto;
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: linear-gradient(145deg, rgba(255,255,255,0.105), rgba(255,255,255,0.035));
+  border: 1px solid rgba(255, 238, 222, 0.14);
   border-radius: 24px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255,255,255,0.07);
 }
 
 .info-card {
-  padding: 20px 20px 18px;
+  padding: 24px 22px 22px;
 }
 
 .date,
@@ -518,10 +548,13 @@ h1 {
   border-radius: 999px;
   text-decoration: none;
   color: #fff;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 249, 239, 0.13);
+  border: 1px solid rgba(255, 240, 218, 0.27);
   font-weight: 700;
+  transition: transform 180ms ease, background 180ms ease;
 }
+
+.map-card a:hover { transform: translateY(-2px); background: rgba(255, 249, 239, 0.22); }
 
 .swipe-hint,
 .final-note {
@@ -548,6 +581,97 @@ h1 {
   font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
   letter-spacing: 0.03em;
 }
+
+.calendar-section {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 48px;
+}
+
+.calendar-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  overflow: hidden;
+  padding: 20px 21px;
+  border: 1px solid rgba(225, 192, 132, 0.42);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(48, 63, 68, 0.96), rgba(83, 58, 53, 0.97));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), inset 0 0 0 4px rgba(255,255,255,0.018), 0 18px 30px rgba(18, 12, 10, 0.28);
+  transition: transform 0.3s cubic-bezier(0.22, 0.8, 0.32, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.calendar-card::before {
+  content: "";
+  position: absolute;
+  top: -78px;
+  right: -38px;
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  background: rgba(234, 190, 117, 0.12);
+}
+
+.calendar-copy,
+.calendar-btn {
+  position: relative;
+  z-index: 1;
+}
+
+.calendar-kicker {
+  margin: 0 0 5px;
+  color: rgba(247, 222, 176, 0.82);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.calendar-copy h2 {
+  margin: 0;
+  color: #fff8eb;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.7rem, 6vw, 2.25rem);
+  line-height: 0.95;
+}
+
+.calendar-copy p:last-child {
+  margin: 8px 0 0;
+  color: rgba(255, 246, 232, 0.76);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.calendar-btn {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  min-width: 112px;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 239, 204, 0.5);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f0d198, #bc8d52);
+  color: #28201d;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.36), 0 8px 16px rgba(19, 12, 10, 0.23);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.calendar-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+.calendar-btn:focus-visible {
+  outline: 2px solid #fff4d6;
+  outline-offset: 3px;
+}
+
 
 /* Thank You Section */
 .thank-you-section {
@@ -603,4 +727,25 @@ h1 {
   .map-card {
     width: min(460px, 80vw);
   }
+}
+
+@media (max-width: 380px) {
+  .envelope-body { height: 196px; }
+  .countdown-item { padding-inline: 4px; }
+  .countdown-value { font-size: 1.38rem; }
+  .calendar-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 21px 19px;
+    text-align: center;
+  }
+
+  .calendar-btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
 }
