@@ -6,7 +6,7 @@ import React from 'react';
 const weddingDetails = {
   title: 'Muhurtham',
   date: 'Sunday, 13 December, 2026',
-  time: '4:30 AM to 6:00 AM',
+  time: '7:00 AM to 9:00 AM',
   venue: 'SSS A Mini Palace - Kalyana Mandapam',
   address: '4, Dindigul Rd, Thiru Nagar, Palani, Sivagiripatti, Tamil Nadu 624601',
   mapUrl: 'https://www.google.com/maps/dir//SSS+A+Mini+Palace+-+Kalyana+Mandapam,+4,+Dindigul+Rd,+Thiru+Nagar,+Palani,+Sivagiripatti,+Tamil+Nadu+624601/@11.8960386,79.4496614,8z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3ba9dfd1433076af:0x2446844caf92ff09!2m2!1d77.5316405!2d10.4480061?entry=ttu&g_ep=EgoyMDI2MDkxNi4wIKXMDSoASAFQAw%3D%3D',
@@ -22,7 +22,7 @@ const receptionDetails = {
   address: 'Marudhamalai Rd, Karai Gounder Layout, Mappillai Layout, Kongu Nagar, Kalveerampalayam, Coimbatore, Tamil Nadu 641046',
   mapUrl: 'https://www.google.com/maps?rlz=1C1RXQR_enIN1124IN1124&biw=1536&bih=826&sca_esv=0cc2b9f834b9d715&sxsrf=APpeQnubEWF73t1W7n71mKbl4lJS-cp-yQ:1789984299885&gs_lp=Egxnd3Mtd2l6LXNlcnAiGGsuIGMuIHRoaXJ1bWFuYSBtYW5kYXBhbTILEC4YgAQYxwEYrwEyBRAAGIAEMgsQABiABBiKBRiGAzILEAAYgAQYigUYhgMyCxAAGIAEGIoFGIYDMgsQABiABBiKBRiGA0jPFFAAWABwAHgBkAEAmAFzoAFzqgEDMC4xuAEByAEA-AEC-AEBmAIBoAJ3mAMAkgcDMC4xoAecB7IHAzAuMbgHd8IHAzItMcgHA4AIAQ&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=Kbfi7GkTX6g7MTopBCLFAxME&daddr=Marudhamalai+Rd,+Karai+Gounder+Layout,+Mappillai+Layout,+Kongu+Nagar,+Kalveerampalayam,+Coimbatore,+Tamil+Nadu+641046',
   description:
-    'Join us for an evening of music, dinner, dancing, and celebration as we toast to love, family, and new beginnings.',
+    'Join us for an enchanting evening as we celebrate love, cherish family and embrace the beautiful beginning of a new chapter.',
 };
 
 export default function Home() {
