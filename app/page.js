@@ -4,9 +4,9 @@ import { useState } from 'react';
 import React from 'react';
 
 const weddingDetails = {
-  title: 'Muhurtham',
+  title: 'Marriage',
   date: 'Sunday, 13 December, 2026',
-  time: '7:00 AM to 9:00 AM',
+  time: '7:45 AM to 8:45 AM',
   venue: 'SSS A Mini Palace - Kalyana Mandapam',
   address: '4, Dindigul Rd, Thiru Nagar, Palani, Sivagiripatti, Tamil Nadu 624601',
   mapUrl: 'https://www.google.com/maps/dir//SSS+A+Mini+Palace+-+Kalyana+Mandapam,+4,+Dindigul+Rd,+Thiru+Nagar,+Palani,+Sivagiripatti,+Tamil+Nadu+624601/@11.8960386,79.4496614,8z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3ba9dfd1433076af:0x2446844caf92ff09!2m2!1d77.5316405!2d10.4480061?entry=ttu&g_ep=EgoyMDI2MDkxNi4wIKXMDSoASAFQAw%3D%3D',
@@ -17,7 +17,7 @@ const weddingDetails = {
 const receptionDetails = {
   title: 'Reception',
   date: 'Tuesday, 15 December 2026',
-  time: '6:00 PM to 9:00 PM',
+  time: '7:00 PM to 9:00 PM',
   venue: 'K. C. Thirumana Mandapam',
   address: 'Marudhamalai Rd, Karai Gounder Layout, Mappillai Layout, Kongu Nagar, Kalveerampalayam, Coimbatore, Tamil Nadu 641046',
   mapUrl: 'https://www.google.com/maps?rlz=1C1RXQR_enIN1124IN1124&biw=1536&bih=826&sca_esv=0cc2b9f834b9d715&sxsrf=APpeQnubEWF73t1W7n71mKbl4lJS-cp-yQ:1789984299885&gs_lp=Egxnd3Mtd2l6LXNlcnAiGGsuIGMuIHRoaXJ1bWFuYSBtYW5kYXBhbTILEC4YgAQYxwEYrwEyBRAAGIAEMgsQABiABBiKBRiGAzILEAAYgAQYigUYhgMyCxAAGIAEGIoFGIYDMgsQABiABBiKBRiGA0jPFFAAWABwAHgBkAEAmAFzoAFzqgEDMC4xuAEByAEA-AEC-AEBmAIBoAJ3mAMAkgcDMC4xoAecB7IHAzAuMbgHd8IHAzItMcgHA4AIAQ&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=Kbfi7GkTX6g7MTopBCLFAxME&daddr=Marudhamalai+Rd,+Karai+Gounder+Layout,+Mappillai+Layout,+Kongu+Nagar,+Kalveerampalayam,+Coimbatore,+Tamil+Nadu+641046',

@@ -15,8 +15,8 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:arvinth-mohanapriya-muhurtham-20261215-v2@example.com
 DTSTAMP:20260926T000000Z
-DTSTART;TZID=Asia/Kolkata:20261213T070000
-DTEND;TZID=Asia/Kolkata:20261213T090000
+DTSTART;TZID=Asia/Kolkata:20261213T074500
+DTEND;TZID=Asia/Kolkata:20261213T084500
 SUMMARY:Arvinth and Mohanapriya's Wedding
 DESCRIPTION:Join us as we start our forever\, in a heartfelt ceremony\, surrounded by love\, and memories.
 LOCATION:SSS A Mini Palace - Kalyana Mandapam\, 4, Dindigul Rd\, Thiru Nagar\, Palani\, Sivagiripatti\, Tamil Nadu 624601
